@@ -1,0 +1,19 @@
+{
+ "saldo": 500.0,
+ "paso": 1,
+ "activa": {
+  "slug": "elon-musk-of-tweets-august-7-august-14",
+  "fecha": "2026-08-10",
+  "bin_titulo": "120-139",
+  "lo": 120,
+  "hi": 139,
+  "lado": "YES",
+  "precio": 0.0205,
+  "cuota": 48.78,
+  "p_modelo": 0.6824,
+  "paso": 1,
+  "stake": 3.3,
+  "ventana_fin": "2026-08-14T16:00:00+00:00"
+ },
+ "historial": []
+}
