@@ -485,9 +485,9 @@ def abrir(estado, dry=False, actualizar=False):
             f"💰 ORDEN {'SIMULADA' if dry else 'REAL'} enviada\n"
             f"Mercado: {c['slug']}\nBin {c['bin_titulo']} · {c['lado']} "
             f"@ {c['precio']:.3f} (cuota {c['cuota']:.2f})\n"
-            f"Paso {estado['paso']} · stake ${c['stake']:.2f}",
-            f"{saldo_ntfy.saldo_real_texto()}"
-            titulo="[SEMANAL] 💰 Apuesta REAL abierta",
+            f"Paso {estado['paso']} · stake ${c['stake']:.2f}\n"
+            f"{saldo_ntfy.saldo_real_texto()}",
+            titulo="💰 Apuesta REAL abierta",
             etiqueta="moneybag")
     except Exception:
         pass
