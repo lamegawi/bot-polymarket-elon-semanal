@@ -487,7 +487,7 @@ def abrir(estado, dry=False, actualizar=False):
             f"@ {c['precio']:.3f} (cuota {c['cuota']:.2f})\n"
             f"Paso {estado['paso']} · stake ${c['stake']:.2f}\n"
             f"{saldo_ntfy.saldo_real_texto()}",
-            titulo="💰 Apuesta REAL abierta",
+            titulo="[SEMANAL] 💰 Apuesta REAL abierta",
             etiqueta="moneybag")
     except Exception:
         pass
@@ -539,7 +539,12 @@ def probar_orden():
     except Exception:
         print("  (sin mercado_activo.json: ejecuta primero el bot en papel)")
         return
-    activo = n    activo = next((m for m in mercados if not m["cerrado"] and m["tipo"] == "semanal" and m.get("fin_iso") and datetime.fromisoformat(m["fin_iso"]) > datetime.now(timezone.utc)), None)ext((m for m in mercados if not m["cerrado"] and m["tipo"] == "semanal"), None)
+    ahora = datetime.now(timezone.utc)
+    activo = next((m for m in mercados
+                   if not m["cerrado"] and m["tipo"] == "semanal"
+                   and m.get("fin_iso")
+                   and datetime.fromisoformat(m["fin_iso"]) > ahora), None)
+
     if not activo:
         print("  (no hay mercado semanal abierto ahora mismo)")
         return
